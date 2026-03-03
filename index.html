@@ -684,6 +684,67 @@
 .scanning { opacity: 1 !important; }
 .scanning .scan-beam { display: block; animation: beamDrop 1s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards; }
 @keyframes beamDrop { 0% { top: -10%; } 100% { top: 110%; } }
+        /* 簡單版美景區塊 CSS */
+.borneo-showcase {
+    width: 90%;
+    max-width: 850px;
+    margin: 40px auto; /* 自動置中並與上方保持距離 */
+    padding: 10px;
+}
+
+.image-frame {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden; /* 確保圖片縮放時不會超出邊框 */
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease;
+}
+
+.image-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.8s ease; /* 緩慢放大特效 */
+}
+
+/* 滑鼠移上去時，圖片放大且邊框亮起 */
+.image-frame:hover img {
+    transform: scale(1.1);
+}
+
+.image-frame:hover {
+    border-color: var(--my-yellow); /* 懸停時邊框變黃色，呼應你的配色 */
+}
+
+/* 圖片下方的說明文字條 */
+.image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 25px 20px 15px;
+    text-align: left;
+}
+
+.location-tag {
+    background: var(--c-orange);
+    color: white;
+    padding: 2px 10px;
+    font-size: 0.7rem;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.image-caption p {
+    margin: 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
     </style>
 </head>
 <body>
@@ -756,6 +817,16 @@
             </div>
         </div>
     </section>
+    
+    <div class="borneo-showcase">
+    <div class="image-frame">
+        <img src="borneo-view.jpg" alt="Borneo Miri View">
+        <div class="image-caption">
+            <span class="location-tag">MALAYSIA | MIRI</span>
+            <p>探索婆羅洲：不僅是比賽，更是一場科技與自然的冒險</p>
+        </div>
+    </div>
+</div>
 
     <section id="rules" class="section">
         <h2 class="section-title sport-font">COMPETITION RULES</h2>
